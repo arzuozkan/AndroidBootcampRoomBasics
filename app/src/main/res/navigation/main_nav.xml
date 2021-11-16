@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/mainPageFragment">
+
+    <fragment
+        android:id="@+id/mainPageFragment"
+        android:name="com.useryoo.androidbootcamproombasics.MainPageFragment"
+        android:label="fragment_main_page"
+        tools:layout="@layout/fragment_main_page" >
+        <action
+            android:id="@+id/action_mainPageFragment_to_addBookFragment"
+            app:destination="@id/addBookFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addBookFragment"
+        android:name="com.useryoo.androidbootcamproombasics.AddBookFragment"
+        android:label="fragment_add_book"
+        tools:layout="@layout/fragment_add_book" >
+        <action
+            android:id="@+id/action_addBookFragment_to_mainPageFragment"
+            app:destination="@id/mainPageFragment"
+            app:popUpTo="@id/addBookFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>
